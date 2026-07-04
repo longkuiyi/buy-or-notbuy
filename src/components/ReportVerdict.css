@@ -1,0 +1,180 @@
+.report-verdict {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'main stats'
+    'reason reason'
+    'action action';
+  align-items: center;
+  gap: 16px 24px;
+  padding: 22px 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: verdictIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes verdictIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.report-verdict::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.report-verdict.buy {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.18) 0%, rgba(5, 150, 105, 0.08) 100%);
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.18);
+}
+
+.report-verdict.dont-buy {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.18) 0%, rgba(220, 38, 38, 0.08) 100%);
+  box-shadow: 0 10px 40px rgba(248, 113, 113, 0.15);
+}
+
+.report-verdict.wait {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.16) 0%, rgba(217, 119, 6, 0.08) 100%);
+  box-shadow: 0 10px 40px rgba(251, 191, 36, 0.12);
+}
+
+.verdict-main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.verdict-emoji {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.verdict-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.verdict-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.verdict-decision {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.verdict-stats {
+  grid-area: stats;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.verdict-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  min-width: 76px;
+}
+
+.verdict-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.verdict-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.verdict-reason {
+  grid-area: reason;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.verdict-watch-btn {
+  grid-area: action;
+  justify-self: start;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.verdict-watch-btn:hover {
+  background: rgba(0, 0, 0, 0.42);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .report-verdict {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'main'
+      'stats'
+      'reason'
+      'action';
+    padding: 18px 20px;
+  }
+
+  .verdict-decision {
+    font-size: 22px;
+  }
+
+  .verdict-emoji {
+    font-size: 32px;
+  }
+
+  .verdict-stats {
+    width: 100%;
+  }
+
+  .verdict-stat {
+    flex: 1;
+  }
+}

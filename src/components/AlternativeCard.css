@@ -1,0 +1,74 @@
+.alternative-card {
+  grid-column: span 1;
+}
+
+.alternatives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.alternative-item {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.alternative-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.alternative-title h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8edf5;
+}
+
+.alt-price {
+  font-size: 13px;
+  color: #fbbf24;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.alt-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alt-detail p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.alt-label {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.alt-pro-label {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.alt-con-label {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.alt-reason-label {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}

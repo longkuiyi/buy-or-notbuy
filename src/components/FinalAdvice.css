@@ -1,0 +1,61 @@
+.final-advice-card {
+  grid-column: span 2;
+}
+
+.decision-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 12px 0 16px;
+  text-align: center;
+}
+
+.decision-text {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.decision-banner.buy {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.decision-banner.buy .decision-text {
+  color: #34d399;
+}
+
+.decision-banner.dont-buy {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.decision-banner.dont-buy .decision-text {
+  color: #f87171;
+}
+
+.decision-banner.wait {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.decision-banner.wait .decision-text {
+  color: #fbbf24;
+}
+
+.decision-reason {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .final-advice-card {
+    grid-column: span 1;
+  }
+
+  .decision-text {
+    font-size: 26px;
+  }
+}
